@@ -5,11 +5,11 @@ db.once('open', async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: 'Food' },
-    { name: 'Household Supplies' },
-    { name: 'Electronics' },
+    { name: 'Music' },
+    { name: 'Clothes' },
+    { name: 'Gear' },
     { name: 'Books' },
-    { name: 'Toys' }
+    { name: 'Misc' }
   ]);
 
   console.log('categories seeded');
@@ -131,10 +131,10 @@ db.once('open', async () => {
   await User.deleteMany();
 
   await User.create({
-    firstName: 'Pamela',
-    lastName: 'Washington',
-    email: 'pamela@testmail.com',
-    password: 'password12345',
+    firstName: 'Bob',
+    lastName: 'Smith',
+    email: 'bob@email.com',
+    password: 'password',
     orders: [
       {
         products: [products[0]._id, products[0]._id, products[1]._id]
@@ -143,10 +143,10 @@ db.once('open', async () => {
   });
 
   await User.create({
-    firstName: 'Elijah',
-    lastName: 'Holt',
-    email: 'eholt@testmail.com',
-    password: 'password12345'
+    firstName: 'Jeff',
+    lastName: 'Jones',
+    email: 'jeff@email.com',
+    password: 'password'
   });
 
   console.log('users seeded');
